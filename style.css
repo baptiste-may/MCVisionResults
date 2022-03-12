@@ -1,0 +1,55 @@
+
+@font-face {
+    font-family: "Gotham Bold";
+    src: url("ressource/Gotham\ Bold.otf") format("truetype");
+}
+
+#background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
+
+.group {
+    display: flex;
+    width: 30%;
+    height: 50px;
+    background-color: rgba(255, 0, 0, 0.1);
+    border: 1px solid rgb(117, 9, 9);
+    border-radius: 10px;
+    left: 50%;
+    margin-left: -15%;
+    position: absolute;
+    transition: 2s;
+}
+.icon {
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+.name {
+    font-family: "Gotham Bold", serif;
+    color: whitesmoke;
+    font-size: 20px;
+    margin-left: 10px;
+}
+.points {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 238, 0, 0.5);
+    border: 1px solid rgb(229, 255, 0);
+    margin-left: auto;
+    margin-right: 0px;
+}
+.groupPoints {
+    font-family: "Gotham Bold", serif;
+    color: whitesmoke;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
