@@ -10,15 +10,29 @@ function reverse(element1, element2) {
 
 function setPoints(element) {
     document.getElementById("points" + element).textContent = data[element-1][2];
+    getGroup(element).style.backgroundColor = "rgba(255, 0, 0, 0.7)";
+}
+
+function getPoints(element) {
+    return parseInt(document.getElementById("points" + element).textContent);
+}
+function getGroup(element) {
+    return document.getElementById(element);
 }
 
 function sort() {
-    for (i = 6; i > 0; i--) {
-        j = i;
-        while (j > 0 && parseInt(document.getElementById("points" + j).textContent) < parseInt(document.getElementById("points" + j-1).textContent)) {
-            reverse(j,j-1);
-            j = j+1;
-        }
+    let list = [];
+    for (i = 7; i > 0; i--) {
+        list.push({index:i, points:getPoints(i)});
+    }
+    list.sort(function (x, y) {
+        return x.points - y.points;
+    });
+    list.reverse();
+    y = 160;
+    for (i = 0; i < 7; i++) {
+        document.getElementById(list[i].index).style.top = y + "px";
+        y += 60;
     }
 }
 
@@ -28,13 +42,11 @@ document.body.onkeyup = function(e){
     if(e.keyCode == 32 && stade > 0){
         
         setPoints(stade);
-        stade -= 1;
-        setTimeout(() => {
-            sort()
-            setTimeout(() => {
-                sort()
-            }, 1000);
-        }, 500);
+        stade -= 1
+        sort();
+        if (stade == 0) {
+            document.getElementById("background-video").src = "ressource/winner-background-video.mp4";
+        }
 
     }
 }
