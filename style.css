@@ -6,7 +6,10 @@
 
 #background-video {
     position: fixed;
-    right: 0;
+    left: 0%; 
+    right: 0%; 
+    margin-left: auto; 
+    margin-right: auto; 
     bottom: 0;
     min-width: 100%;
     min-height: 100%;
@@ -15,20 +18,22 @@
 
 .group {
     display: flex;
-    width: 30%;
+    position: absolute;
+    width: 380px;
     height: 50px;
     background-color: rgba(255, 0, 0, 0.1);
     border: 1px solid rgb(117, 9, 9);
     border-radius: 5px;
-    left: 50%;
-    margin-left: -15%;
-    position: absolute;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
     transition: 2s;
 }
 .icon {
     width: 40px;
     height: 40px;
-    margin-left: 10px;
+    margin-left: 5px;
     margin-top: 5px;
 }
 .name {
@@ -54,4 +59,15 @@
     font-size: 20px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.nextButton {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    left: 0%; 
+    right: 0%; 
+    margin-left: auto; 
+    margin-right: auto; 
+    bottom: 7%;
 }

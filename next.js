@@ -9,7 +9,7 @@ function reverse(element1, element2) {
 }
 
 function setPoints(element) {
-    document.getElementById("points" + element).textContent = data[element-1][2];
+    document.getElementById("points" + element).textContent = data[element-1].final_points;
     getGroup(element).style.backgroundColor = "rgba(255, 0, 0, 0.7)";
 }
 
@@ -26,9 +26,8 @@ function sort() {
         list.push({index:i, points:getPoints(i)});
     }
     list.sort(function (x, y) {
-        return x.points - y.points;
+        return y.points - x.points;
     });
-    list.reverse();
     y = 160;
     for (i = 0; i < 7; i++) {
         document.getElementById(list[i].index).style.top = y + "px";
@@ -38,15 +37,19 @@ function sort() {
 
 stade = 7;
 
-document.body.onkeyup = function(e){
-    if(e.keyCode == 32 && stade > 0){
-        
+function next() {
+    if (stade > 0) {
         setPoints(stade);
         stade -= 1
         sort();
         if (stade == 0) {
             document.getElementById("background-video").src = "ressource/winner-background-video.mp4";
         }
+    }
+}
 
+document.body.onkeyup = function(e) {
+    if(e.key == " "){
+        next();
     }
 }
