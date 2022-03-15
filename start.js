@@ -1,7 +1,7 @@
 
 for (group = 1; group <= 7; group++) {
     const first = document.createElement("div");
-    first.style.top = (40 + (60*group)) + "px";
+    first.style.top = (100 + (60*group)) + "px";
     first.className = "group";
     first.id = group;
     document.body.appendChild(first);
@@ -16,6 +16,11 @@ for (group = 1; group <= 7; group++) {
     name.textContent = data[group-1].name;
     first.appendChild(name);
 
+    const pointToAdd = document.createElement("h2");
+    pointToAdd.className = "pointsToAdd";
+    pointToAdd.id = "pointsToAdd" + group;
+    first.appendChild(pointToAdd);
+
     const second = document.createElement("div");
     second.className = "points";
     first.appendChild(second);
@@ -23,7 +28,7 @@ for (group = 1; group <= 7; group++) {
     const points = document.createElement("h1");
     points.className = "groupPoints";
     points.id = "points" + group;
-    points.textContent = data[group-1].original_points;
+    points.textContent = data[group-1].jurry_points;
     second.appendChild(points);
 }
 

@@ -19,16 +19,16 @@
 .group {
     display: flex;
     position: absolute;
-    width: 380px;
+    width: 450px;
     height: 50px;
-    background-color: rgba(255, 0, 0, 0.1);
-    border: 1px solid rgb(117, 9, 9);
+    background-color: rgba(255, 50, 0, 0.1);
+    border: 1px solid rgb(189, 68, 12);
     border-radius: 5px;
     left: 0; 
     right: 0; 
     margin-left: auto; 
     margin-right: auto; 
-    transition: 2s;
+    transition: 1.25s cubic-bezier(.69,-0.26,.34,1.26);
 }
 .icon {
     width: 40px;
@@ -52,6 +52,7 @@
     margin-bottom: auto;
     margin-left: auto;
     margin-right: -2.5px;
+    transition: 1s;
 }
 .groupPoints {
     font-family: "Gotham Bold", serif;
@@ -70,4 +71,16 @@
     margin-left: auto; 
     margin-right: auto; 
     bottom: 7%;
+}
+
+.pointsToAdd {
+    position: absolute;
+    font-family: "Gotham Bold", serif;
+    color: whitesmoke;
+    font-size: 20px;
+    top: -3px;
+    right: 80px;
+    left: auto;
+    opacity: 0;
+    transition: 0.5s;
 }

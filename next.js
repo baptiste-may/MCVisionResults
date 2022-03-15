@@ -9,8 +9,18 @@ function reverse(element1, element2) {
 }
 
 function setPoints(element) {
-    document.getElementById("points" + element).textContent = data[element-1].final_points;
-    getGroup(element).style.backgroundColor = "rgba(255, 0, 0, 0.7)";
+    getGroup(element).style.backgroundColor = "rgba(255, 50, 0, 0.7)";
+    const pointsToAdd = document.getElementById("pointsToAdd" + element);
+    pointsToAdd.textContent = data[element-1].public_points;
+    pointsToAdd.style.opacity = 1;
+    setTimeout(() => {
+        pointsToAdd.style.right = "20px";
+        pointsToAdd.style.opacity = 0;
+        setTimeout(() => {
+            document.getElementById("points" + element).textContent = (getPoints(element) + data[element-1].public_points);
+            sort()
+        }, 500);
+    }, 1500);
 }
 
 function getPoints(element) {
@@ -41,7 +51,6 @@ function next() {
     if (stade > 0) {
         setPoints(stade);
         stade -= 1
-        sort();
         if (stade == 0) {
             document.getElementById("background-video").src = "ressource/winner-background-video.mp4";
         }
