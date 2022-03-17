@@ -9,18 +9,27 @@ function reverse(element1, element2) {
 }
 
 function setPoints(element) {
-    getGroup(element).style.backgroundColor = "rgba(255, 50, 0, 0.7)";
-    const pointsToAdd = document.getElementById("pointsToAdd" + element);
-    pointsToAdd.textContent = data[element-1].public_points;
-    pointsToAdd.style.opacity = 1;
+    const pointsToAdd = document.getElementById("pointsToAdd" + element).style;
+    pointsToAdd.opacity = 1;
+    pointsToAdd.top = "0px"
+    pointsToAdd.width = "50px";
+    pointsToAdd.height = "50px";
     setTimeout(() => {
-        pointsToAdd.style.right = "20px";
-        pointsToAdd.style.opacity = 0;
+        pointsToAdd.right = 0;
+        pointsToAdd.opacity = 0;
         setTimeout(() => {
             document.getElementById("points" + element).textContent = (getPoints(element) + data[element-1].public_points);
             sort()
+            setTimeout(() => {
+                getGroup(element).style.backgroundColor = "rgba(255, 50, 0, 0.7)";
+            }, 1500);
         }, 500);
-    }, 1500);
+    }, 2250);
+    setTimeout(() => {
+        pointsToAdd.top = "5px"
+        pointsToAdd.width = "40px";
+        pointsToAdd.height = "40px";
+    }, 750);
 }
 
 function getPoints(element) {

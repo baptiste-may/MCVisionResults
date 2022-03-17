@@ -16,10 +16,15 @@ for (group = 1; group <= 7; group++) {
     name.textContent = data[group-1].name;
     first.appendChild(name);
 
-    const pointToAdd = document.createElement("h2");
+    const pointToAdd = document.createElement("div");
     pointToAdd.className = "pointsToAdd";
     pointToAdd.id = "pointsToAdd" + group;
     first.appendChild(pointToAdd);
+
+    const pointToAddText = document.createElement("h1");
+    pointToAddText.className = "pointsToAddText";
+    pointToAddText.textContent = data[group-1].public_points;
+    pointToAdd.appendChild(pointToAddText);
 
     const second = document.createElement("div");
     second.className = "points";
@@ -53,3 +58,15 @@ nextButton.src = "ressource/next-button.png";
 nextButton.className = "nextButton";
 nextButton.onclick = next;
 if (detectMob()) document.body.appendChild(nextButton);
+
+i = 7
+
+setTimeout(() => {
+    function showGroups() {
+        document.getElementById(i).style.opacity = 1;
+        i -= 1
+        if (i == 0) clearInterval(showGroupsInterval)
+    }
+
+    const showGroupsInterval = setInterval(showGroups, 100);
+}, 2000);
