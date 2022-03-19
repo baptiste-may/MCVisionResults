@@ -1,7 +1,7 @@
 
 @font-face {
     font-family: "Gotham Bold";
-    src: url("ressource/Gotham\ Bold.otf") format("truetype");
+    src: url("../../ressource/font/Gotham_Bold.otf") format("truetype");
 }
 
 #background-video {

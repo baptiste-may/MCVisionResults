@@ -61,7 +61,7 @@ function next() {
         setPoints(stade);
         stade -= 1
         if (stade == 0) {
-            document.getElementById("background-video").src = "ressource/winner-background-video.mp4";
+            document.getElementById("background-video").src = "ressource/background/winner-background-video.mp4";
         }
     }
 }

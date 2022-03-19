@@ -54,7 +54,7 @@ function detectMob() {
 }
 
 const nextButton = document.createElement("img");
-nextButton.src = "ressource/next-button.png";
+nextButton.src = "ressource/image/next-button.png";
 nextButton.className = "nextButton";
 nextButton.onclick = next;
 if (detectMob()) document.body.appendChild(nextButton);
