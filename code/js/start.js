@@ -59,14 +59,28 @@ nextButton.className = "nextButton";
 nextButton.onclick = next;
 if (detectMob()) document.body.appendChild(nextButton);
 
-i = 7
+const firstList = sort();
+
+i = firstList.length-1;
 
 setTimeout(() => {
     function showGroups() {
-        document.getElementById(i).style.opacity = 1;
+        document.getElementById(firstList[i].index).style.opacity = 1;
         i -= 1
-        if (i == 0) clearInterval(showGroupsInterval)
+        if (i == -1) clearInterval(showGroupsInterval)
     }
 
     const showGroupsInterval = setInterval(showGroups, 100);
 }, 2000);
+
+stade = firstList.length-1;
+
+function next() {
+    if (stade >= 0) {
+        setPoints(firstList[stade].index);
+        stade -= 1
+        if (stade == -1) {
+            document.getElementById("background-video").src = "ressource/background/winner-background-video.mp4";
+        }
+    }
+}

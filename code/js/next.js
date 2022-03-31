@@ -52,18 +52,7 @@ function sort() {
         document.getElementById(list[i].index).style.top = y + "px";
         y += 60;
     }
-}
-
-stade = 7;
-
-function next() {
-    if (stade > 0) {
-        setPoints(stade);
-        stade -= 1
-        if (stade == 0) {
-            document.getElementById("background-video").src = "ressource/background/winner-background-video.mp4";
-        }
-    }
+    return list;
 }
 
 document.body.onkeyup = function(e) {
