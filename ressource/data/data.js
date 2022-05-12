@@ -1,31 +1,31 @@
 var data = [
 	{
 		name: "PhilZPhaZ",
-		jurry_points: 7,
-		public_points: 10
+		jurry_points: 120,
+		public_points: 140
 	},{
 		name: "Remilulz_91",
-		jurry_points: 6,
-		public_points: 13
+		jurry_points: 100,
+		public_points: 110
 	},{
 		name: "DjRedstone & Nimica",
-		jurry_points: 5,
-		public_points: 11
+		jurry_points: 180,
+		public_points: 150
 	},{
 		name: "DreadLucks",
-		jurry_points: 4,
-		public_points: 9
+		jurry_points: 70,
+		public_points: 40
 	},{
 		name: "BulleMousse",
-		jurry_points: 3,
-		public_points: 7
+		jurry_points: 180,
+		public_points: 130
 	},{
 		name: "Creeper_Killer & Zarox28",
-		jurry_points: 2,
-		public_points: 5
+		jurry_points: 180,
+		public_points: 140
 	},{
 		name: "RedJH",
-		jurry_points: 1,
-		public_points: 3
+		jurry_points: 130,
+		public_points: 130
 	}
 ]
